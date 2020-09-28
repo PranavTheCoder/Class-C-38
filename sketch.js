@@ -8,21 +8,21 @@ var database;
 
 var form, player, game;
 
+var car_1,car_2,car_3,car_4,cars;
 
-function setup(){
-  canvas = createCanvas(400,400);
+function setup() {
+  canvas = createCanvas(displayWidth - 20,displayHeight - 30);
   database = firebase.database();
   game = new Game();
   game.getState();
   game.start();
 }
 
-
-function draw(){
-  if(playerCount === 4){
+function draw() {
+  if(playerCount === 4) {
     game.update(1);
   }
-  if(gameState === 1){
+  if(gameState === 1) {
     clear();
     game.play();
   }
